@@ -1,0 +1,4 @@
+/devel
+/build
+/install
+/src/CMakeLists.txt
