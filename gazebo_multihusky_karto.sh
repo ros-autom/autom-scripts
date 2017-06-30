@@ -6,4 +6,4 @@ sudo killall rviz
 sudo killall roscore
 sudo killall rosmaster
 
-roslaunch husky_gazebo husky_warehouse.launch laser_enabled:=true
+roslaunch nre_simmultihusky autom_multihusky_karto.launch 
