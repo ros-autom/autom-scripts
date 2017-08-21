@@ -19,5 +19,6 @@ sudo killall static_transform_publisher
 export GAZEBO_MODEL_PATH=/home/balkan/.gazebo
 source /usr/share/gazebo-7/setup.bash
 
-
+cd autom-scripts
+gnome-terminal -e "./showPlanners.sh"
 roslaunch husky_gazebo husky_farm.launch laser_enabled:=false kinect_enabled:=true slam_laser_enabled:=true
