@@ -24,6 +24,12 @@ exitRoutine() {
 }
 
  echo ""
+ echo "For Slam Gmapping"
+ echo	""
+ echo "For RViz, run: ${red}roslaunch husky_viz view_robot.launch${reset}"
+ echo "For manual teleoperation and gmapping, run: ${red}./run_teleop.sh${reset}"
+ echo "For auto teleoperation and gmapping, run: ${red}rosrun simple_navigation_goals free_nav_drive${reset}"
+ echo ""
  echo "For default usage (Untouched Eband planner):"
  echo ""
  echo "For RViz, run: ${red}roslaunch husky_viz view_robot.launch${reset}"
@@ -43,5 +49,3 @@ exitRoutine() {
  cd ..
  read -p "Exit? (y/n): " confirm && [[ $confirm == [yY] || $confirm == [yY][eE][sS] ]] || exitRoutine;
 "$SHELL"
-
-
