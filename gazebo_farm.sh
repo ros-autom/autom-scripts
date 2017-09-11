@@ -17,7 +17,7 @@ sudo killall map_server
 sudo killall static_transform_publisher
 
 export GAZEBO_MODEL_PATH=/home/balkan/.gazebo
-source /usr/share/gazebo-7/setup.bash
+source /usr/share/gazebo-7/setup.sh
 
 cd autom-scripts
 gnome-terminal -e "./showPlanners.sh"
