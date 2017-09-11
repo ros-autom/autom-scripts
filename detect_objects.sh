@@ -16,8 +16,9 @@ sudo killall move_base
 sudo killall map_server
 sudo killall static_transform_publisher
 
-roslaunch husky_gazebo husky_farm.launch laser_enabled:=false kinect_enabled:=true slam_laser_enabled:=true
+gnome-terminal -e "roslaunch husky_gazebo husky_farm.launch laser_enabled:=false kinect_enabled:=true slam_laser_enabled:=true"
 
-gnome-terminal -e "roslaunch find_objcets_2d find_objects_3d.launch static_objects:=true sim_mode:=true slam_mode:=true"
+sleep 3
+gnome-terminal -e "roslaunch find_object_2d find_object_3d.launch static_objects:=true sim_mode:=true slam_mode:=true"
 
 "$SHELL"
