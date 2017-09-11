@@ -21,4 +21,12 @@ gnome-terminal -e "roslaunch husky_gazebo husky_farm.launch laser_enabled:=false
 sleep 3
 gnome-terminal -e "roslaunch find_object_2d find_object_3d.launch static_objects:=true sim_mode:=true slam_mode:=true"
 
+sleep 3
+
+gnome-terminal -e "roslaunch husky_viz view_robot.launch"
+
+sleep
+
+gnome-terminal -e "roslaunch husky_navigation gmapping_demo.launch"
+
 "$SHELL"
