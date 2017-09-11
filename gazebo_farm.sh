@@ -16,7 +16,7 @@ sudo killall move_base
 sudo killall map_server
 sudo killall static_transform_publisher
 
-export GAZEBO_MODEL_PATH=/home/balkan/.gazebo
+export GAZEBO_MODEL_PATH=~/.gazebo
 source /usr/share/gazebo-7/setup.sh
 
 cd autom-scripts
