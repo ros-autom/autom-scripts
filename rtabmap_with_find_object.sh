@@ -24,5 +24,5 @@ gnome-terminal -e 'roslaunch rtabmap_ros rtabmap.launch rtabmap_args:="--delete_
 sleep 2
 gnome-terminal -e "roslaunch find_object_2d find_object_3d.launch static_objects:=true sim_mode:=false slam_mode:=true"
 
-"$SHELL
+"$SHELL"
 
