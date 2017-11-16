@@ -28,7 +28,7 @@ gnome-terminal -e "roslaunch husky_viz view_robot.launch"
 
 sleep 3
 
-gnome-terminal -e "roslaunch husky_navigation amcl_demo.launch"
+gnome-terminal -e "roslaunch husky_navigation amcl_warehouse.launch"
 
 #sleep 3
 

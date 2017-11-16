@@ -33,7 +33,7 @@ exitRoutine() {
  echo "For default usage (Untouched Eband planner):"
  echo ""
  echo "For RViz, run: ${red}roslaunch husky_viz view_robot.launch${reset}"
- echo "For AMCL, run: ${red}roslaunch husky_navigation amcl_demo.launch${reset}"
+ echo "For AMCL, run: ${red}roslaunch husky_navigation amcl_warehouse.launch${reset}"
  echo ""
  echo "For TebLocalPlanner:"
  echo ""

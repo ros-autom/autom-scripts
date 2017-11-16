@@ -20,5 +20,5 @@ export GAZEBO_MODEL_PATH=~/.gazebo
 source /usr/share/gazebo-7/setup.sh
 
 cd autom-scripts
-gnome-terminal -e "./showPlanners.sh"
+gnome-terminal -e "./showPlanners_farm.sh"
 roslaunch husky_gazebo husky_farm.launch laser_enabled:=false kinect_enabled:=true slam_laser_enabled:=true
