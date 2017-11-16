@@ -35,16 +35,7 @@ exitRoutine() {
  echo "For RViz, run: ${red}roslaunch husky_viz view_robot.launch${reset}"
  echo "For AMCL, run: ${red}roslaunch husky_navigation amcl_farm.launch${reset}"
  echo ""
- echo "For TebLocalPlanner:"
- echo ""
- echo "For RViz, run: ${red}roslaunch husky_viz view_robot_teb.launch${reset}"
- echo "For AMCL, run: ${red}roslaunch husky_navigation amcl_demo_teb.launch${reset}"
- echo ""
- echo "For EbandLocalPlanner:"
- echo ""
- echo "For RViz, run: ${red}roslaunch husky_viz view_robot_eband.launch${reset}"
- echo "For AMCL, run: ${red}roslaunch husky_navigation amcl_demo_eband.launch${reset}"
- echo ""
+
 
  cd ..
  read -p "Exit? (y/n): " confirm && [[ $confirm == [yY] || $confirm == [yY][eE][sS] ]] || exitRoutine;
