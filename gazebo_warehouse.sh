@@ -30,6 +30,10 @@ sleep 3
 
 gnome-terminal -e "roslaunch husky_navigation amcl_warehouse.launch"
 
+sleep 3
+
+gnome-terminal -e "rosrun simple_navigation_goals box_picking"
+
 #sleep 3
 
 #gnome-terminal -e "roslaunch husky_control husky_teleop.launch"
