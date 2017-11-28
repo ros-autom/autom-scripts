@@ -48,7 +48,7 @@ clean() {
 
 showTopics() {
    cd $THISDIR
-   sudo chmod 0755  ~/ros/husky_kinetic/android/android_packages/libs/showTopics.sh
+   sudo chmod 0755  libs/showTopics.sh
    cd libs
    gnome-terminal -e "./showTopics.sh"
    cd $THISDIR
@@ -60,7 +60,7 @@ anythingElse() {
     echo "Anything else?"
     select more in "Yes" "No"; do
         case $more in
-            Yes ) bash ${THISDIR}/android_warehouse.sh; break;;
+            Yes ) bash ${THISDIR}/warehouse.sh; break;;
             No ) exit 0; break;;
         esac
     done ;

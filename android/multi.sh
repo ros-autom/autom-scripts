@@ -12,12 +12,15 @@ echo ""
 
 runGazebo() {
     cd $THISDIR
-    #chmod 0755 libs/gazebo_farm.sh
+    chmod 0755 libs/multi.sh
     cd libs
-    gnome-terminal -e "./detect_objects.sh"
+    gnome-terminal -e "./multi.sh"
     cd $THISDIR
-    sleep 3
-   
+    sleep 7
+    gnome-terminal -e "rosrun image_transport republish compressed in:=robot_1/camera/rgb/image_raw out:=image_raw"
+    sleep 2
+    cd ../multihusky
+    gnome-terminal -e "./run_teleop_husky2.sh"
 }
 
 clean() {
@@ -53,7 +56,7 @@ anythingElse() {
     echo "Anything else?"
     select more in "Yes" "No"; do
         case $more in
-            Yes ) bash ${THISDIR}/android_detect_farm.sh; break;;
+            Yes ) bash ${THISDIR}/multi.sh; break;;
             No ) exit 0; break;;
         esac
     done ;
