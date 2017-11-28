@@ -12,13 +12,11 @@ echo ""
 
 runGazebo() {
     cd $THISDIR
-    cd libs
-    chmod 0755 gazebo_warehouse.sh
-    gnome-terminal -e "./gazebo_warehouse.sh"
-    cd $THISDIR
-    #sleep 3
-  #  gnome-terminal -e "roslaunch husky_viz view_robot.launch" 
-   # gnome-terminal -e "roslaunch husky_navigation amcl_demo.launch" 
+    gnome-terminal -e "roslaunch husky_gazebo husky_warehouse.launch laser_enabled:=false kinect_enabled:=true slam_laser_enabled:=true"
+    sleep 3
+    gnome-terminal -e "roslaunch husky_viz view_robot.launch"
+    sleep 3
+    gnome-terminal -e "roslaunch husky_navigation amcl_demo.launch"
     sleep 3
     gnome-terminal -e "rosrun image_transport republish compressed in:=camera/rgb/image_raw out:=image_raw"
     sleep 3

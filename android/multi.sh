@@ -12,13 +12,10 @@ echo ""
 
 runGazebo() {
     cd $THISDIR
-    chmod 0755 libs/multi.sh
-    cd libs
-    gnome-terminal -e "./multi.sh"
-    cd $THISDIR
-    sleep 7
+    gnome-terminal -e "roslaunch nre_simmultihusky autom_multihusky_karto.launch "
+    sleep 3
     gnome-terminal -e "rosrun image_transport republish compressed in:=robot_1/camera/rgb/image_raw out:=image_raw"
-    sleep 2
+    sleep 3
     cd ../multihusky
     gnome-terminal -e "./run_teleop_husky2.sh"
 }

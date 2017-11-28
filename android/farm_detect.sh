@@ -12,12 +12,17 @@ echo ""
 
 runGazebo() {
     cd $THISDIR
-    #chmod 0755 libs/gazebo_farm.sh
-    cd libs
-    gnome-terminal -e "./detect_objects.sh"
-    cd $THISDIR
+    gnome-terminal -e "roslaunch husky_gazebo husky_farm.launch laser_enabled:=false kinect_enabled:=true slam_laser_enabled:=true"
     sleep 3
-   
+    gnome-terminal -e "roslaunch find_object_2d find_object_3d.launch static_objects:=true sim_mode:=true slam_mode:=true"
+    sleep 3
+    gnome-terminal -e "roslaunch husky_viz view_robot.launch"
+    sleep 3
+    gnome-terminal -e "roslaunch husky_navigation gmapping_demo.launch"
+    sleep 3
+    gnome-terminal -e "rosrun image_transport republish compressed in:=camera/rgb/image_raw out:=image_raw"
+    cd $THISDIR
+    
 }
 
 clean() {
@@ -53,7 +58,7 @@ anythingElse() {
     echo "Anything else?"
     select more in "Yes" "No"; do
         case $more in
-            Yes ) bash ${THISDIR}/detect_farm.sh; break;;
+            Yes ) bash ${THISDIR}/farm_detect.sh; break;;
             No ) exit 0; break;;
         esac
     done ;
