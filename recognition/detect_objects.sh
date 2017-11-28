@@ -16,6 +16,11 @@ sudo killall move_base
 sudo killall map_server
 sudo killall static_transform_publisher
 
+echo "==============="
+echo ${red}Load session at rtab to load the trees database (*.bin){reset} 
+echo "==============="
+echo ""
+
 gnome-terminal -e "roslaunch husky_gazebo husky_farm.launch laser_enabled:=false kinect_enabled:=true slam_laser_enabled:=true"
 
 sleep 3
@@ -25,8 +30,13 @@ sleep 3
 
 gnome-terminal -e "roslaunch husky_viz view_robot.launch"
 
-sleep
+sleep 3
 
 gnome-terminal -e "roslaunch husky_navigation gmapping_demo.launch"
+
+sleep 3
+
+gnome-terminal -e "cd .. && ./run_teleop.sh"
+
 
 "$SHELL"

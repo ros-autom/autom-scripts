@@ -30,6 +30,7 @@ runDefault() {
 	sleep 3
 	gnome-terminal -e "roslaunch husky_navigation amcl_farm.launch"
 	sleep 3
+	gnome-terminal -e "./run_teleop.sh"
 }
 
 runGmappingManual() {
