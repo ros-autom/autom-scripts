@@ -1,4 +1,6 @@
 #!/bin/bash
+red=`tput setaf 1`
+reset=`tput sgr0`
 
 sudo killall gzserver
 sudo killall gzclient
@@ -20,7 +22,7 @@ sudo killall static_transform_publisher
 echo "==============="
 echo "For image recognition"
 echo "Run:"
-echo "${red}roslaunch find-object find_object_3d_warehouse{reset}"
+echo "${red}roslaunch find-object find_object_3d_warehouse${reset}"
 echo "And import the png files to rtab"
 echo "==============="
 echo ""
