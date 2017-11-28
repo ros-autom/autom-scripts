@@ -19,12 +19,13 @@ sudo killall move_base
 sudo killall map_server
 sudo killall static_transform_publisher
 
-echo "==============="
+echo ""
+echo "${red}==============={reset}"
 echo "For image recognition"
 echo "Run:"
 echo "${red}roslaunch find-object find_object_3d_warehouse${reset}"
 echo "And import the png files to rtab"
-echo "==============="
+echo "${red}==============={reset}"
 echo ""
 
 gnome-terminal -e "roslaunch husky_gazebo husky_warehouse.launch laser_enabled:=false kinect_enabled:=true slam_laser_enabled:=true"
