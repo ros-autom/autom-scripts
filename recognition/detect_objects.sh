@@ -17,7 +17,7 @@ sudo killall map_server
 sudo killall static_transform_publisher
 
 echo "==============="
-echo ${red}Load session at rtab to load the trees database (*.bin){reset} 
+echo ${red}Load session at rtab to load the trees database *.bin {reset} 
 echo "==============="
 echo ""
 
@@ -35,8 +35,8 @@ sleep 3
 gnome-terminal -e "roslaunch husky_navigation gmapping_demo.launch"
 
 sleep 3
-
-gnome-terminal -e "cd .. && ./run_teleop.sh"
+cd ..
+gnome-terminal -e "./run_teleop.sh"
 
 
 "$SHELL"
